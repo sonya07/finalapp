@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 use App\Guest as Guest;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
+use League\Csv\Writer;
+use Schema;
+use SplTempFileObject;
+use Illuminate\Support\Facades\Response;
+
+
 //use Illuminate\Support\Facades\DB;
 
 class GuestsController extends Controller
 {
-
     public function __construct( Guest $guest )
     {
         $this->guest = $guest;
@@ -19,25 +25,45 @@ class GuestsController extends Controller
 
         $data['guests'] = //$this->guest->all();
             Guest::
-            limit(100)
-            ->orderby('last_name')
+            orderby('last_name')
             ->get();  
 
         return view('guests.browse_cosmos', $data);
-
     }
 
-    public function export() {
-        return view('guests/export');
+    public function export() { 
+        {
+            $headers = [
+                    'Cache-Control'       => 'must-revalidate, post-check=0, pre-check=0'
+                ,   'Content-type'        => 'text/csv'
+                ,   'Content-Disposition' => 'attachment; filename=galleries.csv'
+                ,   'Expires'             => '0'
+                ,   'Pragma'              => 'public'
+            ];
+        
+            $list = Guest::all()->toArray();
+        
+            # add headers for each column in the CSV download
+            array_unshift($list, array_keys($list[0]));
+        
+           $callback = function() use ($list) 
+            {
+                $FH = fopen('php://output', 'w');
+                foreach ($list as $row) { 
+                    fputcsv($FH, $row);
+                }
+                fclose($FH);
+            };
+                return Response::stream($callback, 200, $headers); //use Illuminate\Support\Facades\Response;
+        }
     }
-
     public function newGuest(Request $request, Guest $guest) {
         $data = [];
         
         $data['first_name'] = $request->input('first_name');
         $data['last_name'] = $request->input('last_name');
         $data['address_1'] = $request->input('address_1');
-        $data['address_2'] = $request->input('address_2');
+        $data['address_2'] = $request->input('address_2 ');
         $data['zip'] = $request->input('zip');
         $data['city'] = $request->input('city');
         $data['state'] = $request->input('state');
@@ -64,10 +90,6 @@ class GuestsController extends Controller
         }
         $data['modify'] = 0;
         return view('guests/form', $data);
-    }
-
-    public function create(){
-        return view('guests/create');
     }
 
     public function modify(Request $request, $guest_id, Guest $guest ){

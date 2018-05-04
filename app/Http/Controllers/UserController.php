@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use PDF;
 use Illuminate\Http\Request;
+use Session;
 
 class UserController extends Controller
 {
@@ -19,8 +21,13 @@ class UserController extends Controller
         $this->user = $user;
     }
 
-    public function print() {
-        return view('users/print');
+    public function downloadPDF() {
+        $users = User::all();
+        $orientation = 'landscape';
+        $customPaper = array(0,0,950,950);
+        //$this->setPaper($customPaper, $orientation);
+        $pdf = PDF::loadView('users.print', compact('users'));
+        return $pdf->download('Users.pdf');
     }
 
     public function show($user_id)
@@ -29,6 +36,7 @@ class UserController extends Controller
         $user_data = $this->user->find($user_id);
         $data['name'] = $user_data->name;
         $data['email'] = $user_data->email;
+        $data['modify'] = 1;
         
         return view('users/form', $data);
     }
@@ -64,6 +72,45 @@ class UserController extends Controller
         
         return view('users/form', $data);
     }
-    
 
+    public function newUser(Request $request, User $user ) {
+        $data = [];
+        
+        $data['name'] = $request->input('name');
+        $data['email'] = $request->input('email');
+        $data['password'] = bcrypt(request('password'));;
+
+
+        if( $request->isMethod('post') )
+        {
+           // dd($data);
+            $this->validate(
+                $request,
+                [
+                    'name' => 'required|min:5',
+                    'email' => 'required|string|email|max:255',
+                    'password' => 'required|between:8,255|confirmed',
+                    'password_confirmation' => 'required',
+                ]
+            );
+
+            $user->insert($data);
+
+            return redirect('/users');
+        }
+        $data['modify'] = 0;
+        return view('users/form', $data);
+    }
+
+    public function destroy($user_id)
+    {
+        //
+        $user = User::find($user_id);
+        $user->delete();
+        Route::group(['middleware' => ['web']], function () {
+        // redirect
+            Session::flash('message', 'Successfully deleted the user!');
+            return redirect('/users');
+         });
+    }
 }
