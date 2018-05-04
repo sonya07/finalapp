@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <div class = "container">
-                    <form>
+                    <form  action="{{ route('export_guests') }}" method="post">
                     @foreach($guests as $guest)
                     <div class = "row">
                             <div class="form-check">

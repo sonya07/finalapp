@@ -6,10 +6,10 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Users <a class="hollow button" href="{{ route('print_user') }}">PRINT</a></div>
-
+                
                 <div class="card-body">
                     <div class = "container">
-                    
+                    <div class="medium-2  columns"><a class="button hollow success" href="{{ route('create_user') }}">ADD NEW USER</a></div>
                     @foreach($users as $user)
                     <div class = "row">
                         <div class = "col-md-2">
@@ -18,12 +18,16 @@
                         <div class = "col-md-2">
                             {{ $user->name }}
                         </div>
-                        <div class = "col-md-5">
+                        <div class = "col-md-4">
                              {{ $user->email }}
                         </div>
-                        <div class = "col-md-2">
+                        <div class = "col-md-1">
                             <a class="hollow button" href="{{ route('show_user',['id'=>$user->id]) }}">EDIT</a>
                         </div>
+                        <div class = "col-md-1">
+                            <a class="hollow button" href="{{ route('delete_user',['id'=>$user->id]) }}">DELETE</a>
+                        </div>
+                        
                     </div>
                     @endforeach
                     
