@@ -7,7 +7,7 @@
 
                 <div class="card-body">
                     <div class = "container">
-                    <form>
+                    <form  action="<?php echo e(route('export_guests')); ?>" method="post">
                     <?php $__currentLoopData = $guests; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $guest): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class = "row">
                             <div class="form-check">
