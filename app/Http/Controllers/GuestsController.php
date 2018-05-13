@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Guest as Guest;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Support\Facades;
 use League\Csv\Writer;
 use Schema;
 use SplTempFileObject;
@@ -31,32 +32,39 @@ class GuestsController extends Controller
         return view('guests.browse_cosmos', $data);
     }
 
+
     public function export() { 
         {
+           
             $headers = [
                     'Cache-Control'       => 'must-revalidate, post-check=0, pre-check=0'
                 ,   'Content-type'        => 'text/csv'
-                ,   'Content-Disposition' => 'attachment; filename=galleries.csv'
+                ,   'Content-Disposition' => 'attachment; filename=MailList.csv'
                 ,   'Expires'             => '0'
                 ,   'Pragma'              => 'public'
             ];
-        
-            $list = Guest::all()->toArray();
-        
+    
+        $list = Guest::all('first_name','last_name','address_1','city','state','zip')
+        ->toArray();
+
+           //dd($list);
             # add headers for each column in the CSV download
             array_unshift($list, array_keys($list[0]));
         
            $callback = function() use ($list) 
             {
+
                 $FH = fopen('php://output', 'w');
                 foreach ($list as $row) { 
                     fputcsv($FH, $row);
                 }
                 fclose($FH);
+
             };
-                return Response::stream($callback, 200, $headers); //use Illuminate\Support\Facades\Response;
-        }
+                return Response::stream($callback, 200,$headers); //use Illuminate\Support\Facades\Response;
+        }   
     }
+
     public function newGuest(Request $request, Guest $guest) {
         $data = [];
         
@@ -86,7 +94,7 @@ class GuestsController extends Controller
 
             $guest->insert($data);
 
-            return redirect('guests/browse');
+            return redirect('guests/browse')->with(['success' => 'Successful add !']);;
         }
         $data['modify'] = 0;
         return view('guests/form', $data);
@@ -130,21 +138,19 @@ class GuestsController extends Controller
 
             $guest_data->save();
 
-            return redirect('guests/browse');
+            return redirect('guests/browse')->with(['success' => 'Successful update !']);;
         }
         
         return view('guests/form', $data);
     }
 
     public function years() {
-        $guests = \DB::table('guest')
+        /*$guests = \DB::table('guest')
             ->select(\DB::raw('YEAR(created_at) as year, COUNT(*) as total')) 
-            ->where('mail_list','<>',0)
-            ->groupBy('year')
-            ->orderBy('year','desc')
-            ->get();
+            ->where('year',2017)
+            ->get();*/
 
-        return view('guests.years',compact('guests'));
+        return view('guests.years');
     }
 
     public function show($guest_id)

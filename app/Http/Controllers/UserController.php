@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use PDF;
 use Illuminate\Http\Request;
-use Session;
+use Response;
 
 class UserController extends Controller
 {
@@ -67,7 +67,7 @@ class UserController extends Controller
 
             $user_data->save();
 
-            return redirect('users');
+            return redirect('users')->with(['success' => 'Successful update !']);
         }
         
         return view('users/form', $data);
@@ -96,21 +96,16 @@ class UserController extends Controller
 
             $user->insert($data);
 
-            return redirect('/users');
+            return redirect('/users')->with(['success' => 'Successful add!']);
         }
         $data['modify'] = 0;
         return view('users/form', $data);
     }
 
-    public function destroy($user_id)
+    public function destroy($id)
     {
-        //
-        $user = User::find($user_id);
-        $user->delete();
-        Route::group(['middleware' => ['web']], function () {
-        // redirect
-            Session::flash('message', 'Successfully deleted the user!');
-            return redirect('/users');
-         });
+        $users = User::find($id);
+        $users->delete();
+        return redirect('/users')->with(['success' => 'Successful delete!']);
     }
 }
