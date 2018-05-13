@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "188bb3722f7ba54d0e40e112166a3979",
+    "content-hash": "64de2e2f7b83eb639ac828560742a06d",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -61,6 +61,93 @@
                 "pdf"
             ],
             "time": "2018-02-07T17:43:25+00:00"
+        },
+        {
+            "name": "container-interop/container-interop",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/container-interop/container-interop.git",
+                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+                "shasum": ""
+            },
+            "require": {
+                "psr/container": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Container\\": "src/Interop/Container/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
+            "homepage": "https://github.com/container-interop/container-interop",
+            "time": "2017-02-14T19:40:03+00:00"
+        },
+        {
+            "name": "danielstjules/stringy",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/danielstjules/Stringy.git",
+                "reference": "fc39b709533d328380c9b436c9801c619669da09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/danielstjules/Stringy/zipball/fc39b709533d328380c9b436c9801c619669da09",
+                "reference": "fc39b709533d328380c9b436c9801c619669da09",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stringy\\": "src/"
+                },
+                "files": [
+                    "src/Create.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel St. Jules",
+                    "email": "danielst.jules@gmail.com",
+                    "homepage": "http://www.danielstjules.com"
+                }
+            ],
+            "description": "A string manipulation library with multibyte support",
+            "homepage": "https://github.com/danielstjules/Stringy",
+            "keywords": [
+                "UTF",
+                "helpers",
+                "manipulation",
+                "methods",
+                "multibyte",
+                "string",
+                "utf-8",
+                "utility",
+                "utils"
+            ],
+            "time": "2015-12-21T00:49:59+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -431,6 +518,52 @@
             "time": "2018-03-08T01:11:30+00:00"
         },
         {
+            "name": "evenement/evenement",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igorw/evenement.git",
+                "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorw/evenement/zipball/f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
+                "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Evenement": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch",
+                    "homepage": "http://wiedler.ch/igor/"
+                }
+            ],
+            "description": "Événement is a very simple event dispatching library for PHP",
+            "keywords": [
+                "event-dispatcher",
+                "event-emitter"
+            ],
+            "time": "2012-11-02T14:49:47+00:00"
+        },
+        {
             "name": "fideloper/proxy",
             "version": "4.0.0",
             "source": {
@@ -773,6 +906,74 @@
             "time": "2018-03-06T17:34:36+00:00"
         },
         {
+            "name": "laravelcollective/html",
+            "version": "v5.6.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "38f2c6ff0d3dfc497175a5cff5e24b3937f6e2c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/38f2c6ff0d3dfc497175a5cff5e24b3937f6e2c9",
+                "reference": "38f2c6ff0d3dfc497175a5cff5e24b3937f6e2c9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.6.*",
+                "illuminate/routing": "5.6.*",
+                "illuminate/session": "5.6.*",
+                "illuminate/support": "5.6.*",
+                "illuminate/view": "5.6.*",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "illuminate/database": "5.6.*",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.6-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Collective\\Html\\HtmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "Collective\\Html\\FormFacade",
+                        "Html": "Collective\\Html\\HtmlFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "https://laravelcollective.com",
+            "time": "2018-04-26T16:09:18+00:00"
+        },
+        {
             "name": "league/csv",
             "version": "9.0.0",
             "source": {
@@ -997,6 +1198,182 @@
                 "psr-3"
             ],
             "time": "2017-06-19T01:22:40+00:00"
+        },
+        {
+            "name": "nayjest/collection",
+            "version": "v2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nayjest/Collection.git",
+                "reference": "54ac4a0cec7638e3394a6c0f8c18b3323f66b95b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nayjest/Collection/zipball/54ac4a0cec7638e3394a6c0f8c18b3323f66b95b",
+                "reference": "54ac4a0cec7638e3394a6c0f8c18b3323f66b95b",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "2.0.*",
+                "nayjest/manipulator": "^2||^3",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "danielstjules/stringy": "^1.9||^2",
+                "phpunit/phpunit": "^4||^5"
+            },
+            "suggest": {
+                "danielstjules/stringy": "Required to filter ObjectCollection by properties with getters"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nayjest\\Collection\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii [Nayjest] Stepanenko",
+                    "email": "mail@vitaliy.in",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Collections for PHP",
+            "keywords": [
+                "collection",
+                "collections"
+            ],
+            "time": "2016-04-06T16:56:02+00:00"
+        },
+        {
+            "name": "nayjest/manipulator",
+            "version": "v3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nayjest/manipulator.git",
+                "reference": "80423ec59548de4bec6de2e821b3993974a7b4cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nayjest/manipulator/zipball/80423ec59548de4bec6de2e821b3993974a7b4cb",
+                "reference": "80423ec59548de4bec6de2e821b3993974a7b4cb",
+                "shasum": ""
+            },
+            "require": {
+                "nayjest/str-case-converter": "^1",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4||^5"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/mp.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii Stepanenko",
+                    "email": "mail@vitaliy.in"
+                }
+            ],
+            "description": "Utilities for manipulating PHP objects",
+            "time": "2016-09-27T15:52:17+00:00"
+        },
+        {
+            "name": "nayjest/str-case-converter",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nayjest/StrCaseConverter.git",
+                "reference": "e30f16afec3ed83e12369555e264263c23cf68bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nayjest/StrCaseConverter/zipball/e30f16afec3ed83e12369555e264263c23cf68bb",
+                "reference": "e30f16afec3ed83e12369555e264263c23cf68bb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii Stepanenko",
+                    "email": "mail@vitaliy.in"
+                }
+            ],
+            "description": "Library for converting strings from camel case to snake case and vice versa.",
+            "time": "2015-06-04T13:11:29+00:00"
+        },
+        {
+            "name": "nayjest/tree",
+            "version": "v3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nayjest/Tree.git",
+                "reference": "ee7457ae35c1c1bf7a4779feb88d572a8e3d6d32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nayjest/Tree/zipball/ee7457ae35c1c1bf7a4779feb88d572a8e3d6d32",
+                "reference": "ee7457ae35c1c1bf7a4779feb88d572a8e3d6d32",
+                "shasum": ""
+            },
+            "require": {
+                "nayjest/collection": "^2.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nayjest\\Tree\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii [Nayjest] Stepanenko",
+                    "email": "mail@vitaliy.in",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tree data structure for PHP",
+            "keywords": [
+                "data structure",
+                "hierarchy",
+                "tree",
+                "trees"
+            ],
+            "time": "2016-01-27T14:21:22+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -2474,6 +2851,163 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2017-11-27T11:13:29+00:00"
+        },
+        {
+            "name": "view-components/eloquent-data-processing",
+            "version": "v1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/view-components/eloquent-data-processing.git",
+                "reference": "6414babea3242f80ad668662f11d66ea553c8535"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/view-components/eloquent-data-processing/zipball/6414babea3242f80ad668662f11d66ea553c8535",
+                "reference": "6414babea3242f80ad668662f11d66ea553c8535",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5||^7",
+                "view-components/view-components": "^0.24.2||^0.25||^0.26.6"
+            },
+            "require-dev": {
+                "illuminate/database": "*",
+                "view-components/testing-helpers": "^2.0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ViewComponents\\Eloquent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii [Nayjest] Stepanenko",
+                    "email": "mail@vitaliy.in",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Eloquent ORM support for ViewComponents",
+            "homepage": "https://github.com/view-components/eloquent-data-processing",
+            "keywords": [
+                "laravel",
+                "laravel-4",
+                "laravel-5",
+                "laravel4",
+                "laravel5"
+            ],
+            "time": "2017-02-14T16:00:16+00:00"
+        },
+        {
+            "name": "view-components/grids",
+            "version": "v0.5.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/view-components/grids.git",
+                "reference": "c94ca4473a9c9aa575bc8e5c9ab515a53636fd74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/view-components/grids/zipball/c94ca4473a9c9aa575bc8e5c9ab515a53636fd74",
+                "reference": "c94ca4473a9c9aa575bc8e5c9ab515a53636fd74",
+                "shasum": ""
+            },
+            "require": {
+                "nayjest/tree": "^3",
+                "php": "^5.5||^7",
+                "view-components/view-components": "^0.25||^0.26.6"
+            },
+            "require-dev": {
+                "view-components/testing-helpers": "^2.0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ViewComponents\\Grids\\": "src/"
+                },
+                "files": [
+                    "src/bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii [Nayjest] Stepanenko",
+                    "email": "mail@vitaliy.in",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Flexible Framework-agnostic Data Grids for PHP",
+            "time": "2017-02-14T16:00:45+00:00"
+        },
+        {
+            "name": "view-components/view-components",
+            "version": "v0.26.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/view-components/view-components.git",
+                "reference": "0c6faa969e70b0f6d16fa6a24bd12da1ac30d3eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/view-components/view-components/zipball/0c6faa969e70b0f6d16fa6a24bd12da1ac30d3eb",
+                "reference": "0c6faa969e70b0f6d16fa6a24bd12da1ac30d3eb",
+                "shasum": ""
+            },
+            "require": {
+                "container-interop/container-interop": "^1.1",
+                "danielstjules/stringy": "^1.9|~2.2.0",
+                "nayjest/collection": "^2.3",
+                "nayjest/manipulator": "^3.1.0",
+                "nayjest/tree": "^3",
+                "php": "^5.5||^7"
+            },
+            "provide": {
+                "container-interop/container-interop-implementation": "^1.1"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "squizlabs/php_codesniffer": "~2.3",
+                "view-components/testing-helpers": "^2.0.1"
+            },
+            "suggest": {
+                "league/uri": "Required by Pagination component",
+                "symfony/var-dumper": "Required by SymfonyVarDump component"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ViewComponents\\ViewComponents\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii [Nayjest] Stepanenko",
+                    "email": "mail@vitaliy.in",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Flexible Framework-Agnostic UI for Enterprise Web Applications",
+            "homepage": "https://github.com/view-components/view-components",
+            "keywords": [
+                "Rendering",
+                "html",
+                "presenter",
+                "view",
+                "widgets"
+            ],
+            "time": "2016-12-27T15:05:00+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
