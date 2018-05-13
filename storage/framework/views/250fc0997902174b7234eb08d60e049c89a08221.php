@@ -3,6 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+            <?php echo $__env->make('flash-message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <div class="card-body">
                     <div class = "container">
                       <div class="row">

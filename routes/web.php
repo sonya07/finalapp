@@ -24,12 +24,11 @@ Route::get('/users/new', 'UserController@newUser')->name('new_user');
 Route::post('/users/new', 'UserController@newUser')->name('create_user');
 Route::get('/users/{id}', 'UserController@show')->name('show_user');
 Route::post('/users/{id}', 'UserController@modify')->name('update_user');
-Route::get('/users/delete/{id}', 'UserController@destroy')->name('delete_user');
+Route::delete('/users/delete/{id}', 'UserController@destroy')->name('delete_user');
 
 Route::get('/guests/export_years', 'GuestsController@years');
 Route::get('/guests/browse', 'GuestsController@browse')->name('guests');
 Route::post('/guests/export_years', 'GuestsController@export')->name('export_guests');
-//may need to send an array to the controller
 
 Route::get('/guests/new', 'GuestsController@newGuest')->name('new_guest');
 Route::post('/guests/new', 'GuestsController@newGuest')->name('create_guest');

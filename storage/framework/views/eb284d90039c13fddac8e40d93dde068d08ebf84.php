@@ -4,7 +4,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">COSMOS Guests</div>
-    
+                <?php echo $__env->make('flash-message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <div class="card-body">
                     <div class = "container">
                     <div class="medium-2  columns"><a class="button hollow success" href="<?php echo e(route('new_guest')); ?>">ADD NEW GUEST</a></div>
