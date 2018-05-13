@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">COSMOS Guests</div>
-    
+                @include('flash-message')
                 <div class="card-body">
                     <div class = "container">
                     <div class="medium-2  columns"><a class="button hollow success" href="{{ route('new_guest') }}">ADD NEW GUEST</a></div>

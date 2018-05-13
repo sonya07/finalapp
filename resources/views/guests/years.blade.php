@@ -9,21 +9,8 @@
 
                 <div class="card-body">
                     <div class = "container">
-                    <form  action="{{ route('export_guests') }}" method="post">
-                    @foreach($guests as $guest)
-                    <div class = "row">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="{{ $guest->year }}">
-                                <label class ="form-check-label">
-                                    {{ $guest->year }}-
-                                </label>
-                                <label class ="form-check-label">
-                                    {{ $guest->total }}
-                                </label>
-                            </div>
-                        </div>
-                    @endforeach
-                    <button type="submit" class="btn btn-primary">Export COSMOS</button>
+                    <form  action="{{ route('export_guests') }}" method="post">                    
+                        <button type="submit" class="btn btn-primary">EXPORT</button>
                     </form>
                     </div>
                 </div>

@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Users <a class="hollow button" href="{{ route('print_user') }}">PRINT</a></div>
-                
+                @include('flash-message')
                 <div class="card-body">
                     <div class = "container">
                     <div class="medium-2  columns"><a class="button hollow success" href="{{ route('create_user') }}">ADD NEW USER</a></div>
@@ -25,7 +25,10 @@
                             <a class="hollow button" href="{{ route('show_user',['id'=>$user->id]) }}">EDIT</a>
                         </div>
                         <div class = "col-md-1">
-                            <a class="hollow button" href="{{ route('delete_user',['id'=>$user->id]) }}">DELETE</a>
+                            {!! Form::open(array('url' => '/users/delete/' . $user->id)) !!}
+                            {!! Form::hidden('_method', 'DELETE') !!}
+                            {!! Form::submit('DELETE', array('class' => 'btn btn-danger')) !!}
+                            {!! Form::close() !!}
                         </div>
                         
                     </div>
